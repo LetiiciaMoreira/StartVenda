@@ -1,0 +1,192 @@
+body {
+  background: linear-gradient(135deg, #f5e9ff 0%, #ffe3e3 100%);
+}
+
+#chat-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-card {
+  width: 100%;
+  max-width: 900px;
+  min-height: 70vh;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(127, 78, 157, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 32px 32px 16px 32px;
+  background: linear-gradient(135deg, #faf8fc 60%, #fbe9f9 100%);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.15rem;
+  gap: 12px;
+}
+
+#chat-mensagens {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 10px 0;
+  background: #faf8fc;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mensagem {
+  padding: 10px 16px;
+  border-radius: 16px;
+  max-width: 55%;
+  font-size: 1rem;
+  word-break: break-word;
+  box-shadow: 0 2px 8px 0 rgba(127, 78, 157, 0.08);
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-clip: padding-box;
+}
+
+.mensagem.comprador {
+  /* Agora o cliente (comprador) fica à direita, com gradiente */
+  background: linear-gradient(135deg, #7F4E9D 80%, #FF6B6B 100%);
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+  border-bottom-right-radius: 6px;
+}
+
+.mensagem.vendedor {
+  /* Agora o vendedor fica à esquerda, com fundo claro */
+  background: #f1e7fa;
+  color: #343a40;
+  margin-right: auto;
+  text-align: left;
+  border-bottom-left-radius: 6px;
+}
+
+.mensagem small {
+  font-size: 0.93em;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.chat-footer {
+  background: #fff;
+  padding: 18px 32px;
+  border-top: 1px solid #f0e6f6;
+}
+
+#mensagem-input {
+  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 12px;
+  background: #f8f6fa;
+  border: 1px solid #e0d3f7;
+}
+
+.btn-outline-primary {
+  border-radius: 12px;
+  font-size: 1.2rem;
+  padding: 0 20px;
+}
+
+.btn-gradient-purple-pink {
+  background: linear-gradient(90deg, #7F4E9D 0%, #FF6B6B 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(127, 78, 157, 0.10);
+}
+.btn-gradient-purple-pink:hover, .btn-gradient-purple-pink:focus {
+  background: linear-gradient(90deg, #6b3e8e 0%, #e05555 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px 0 rgba(127, 78, 157, 0.18);
+}
+
+.compra-concluida-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(245, 233, 255, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.7s;
+}
+
+.compra-concluida-card {
+  background: linear-gradient(135deg, #fff 60%, #ffe3e3 100%);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(127, 78, 157, 0.18);
+  padding: 48px 32px 40px 32px;
+  min-width: 340px;
+  max-width: 95vw;
+  position: relative;
+  overflow: hidden;
+  animation: popIn 0.7s;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-12px);}
+}
+
+/* Confetti animation */
+.confetti {
+  pointer-events: none;
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+.confetti-piece {
+  position: absolute;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: confetti-fall 1.8s linear forwards;
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(-40px) scale(1.1) rotate(0deg);}
+  100% { transform: translateY(340px) scale(0.8) rotate(360deg);}
+}
+
+@media (max-width: 900px) {
+  .chat-card {
+    max-width: 100vw;
+    border-radius: 0;
+    min-height: 80vh;
+  }
+  .chat-body, .chat-footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

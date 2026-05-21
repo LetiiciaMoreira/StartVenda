@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StartVenda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/carrinho.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="assets/images/logobranca.png" alt="StartVenda" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <i class="bi bi-house-door"></i> Início
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#lojas">
+              <i class="bi bi-shop"></i> Lojas
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#produtos">
+              <i class="bi bi-box-seam"></i> Produtos
+            </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="banner">
+    <div class="container">
+      <h1 class="display-5">Bem-vindo à StartVenda</h1>
+      <p class="lead">Ofertas incríveis, todos os dias, nas melhores lojas!</p>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" placeholder="O que você está procurando?">
+      <button class="btn btn-outline-primary" type="button">Buscar</button>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h2 class="mb-4 text-center">Filtrar por Categoria</h2>
+    <div class="d-flex align-items-center position-relative">
+      <button id="btn-categoria-esquerda" class="btn btn-light shadow-sm me-2" style="z-index:2; position:relative;">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="categoria-scroll d-flex flex-nowrap overflow-auto py-2" id="categoria-scroll"
+        style="gap: 1rem; scroll-behavior: smooth;">
+        <div id="mostrar-todos-produtos" class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-grid" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Todas</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-phone" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Eletrônicos</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-bag-heart" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Moda</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-house-door" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Casa</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-bicycle" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Esportes</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-heart-pulse" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Beleza</h5>
+            </div>
+          </div>
+        </div>
+        <div class="category-card" style="min-width: 180px;">
+          <div class="card modern-category-card shadow-sm h-100 border-0">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+              <div class="category-icon mb-2 bg-gradient">
+                <i class="bi bi-book" style="font-size:2rem;"></i>
+              </div>
+              <h5 class="card-title mt-2">Livros</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="btn-categoria-direita" class="btn btn-light shadow-sm ms-2" style="z-index:2; position:relative;">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <section class="container my-5" id="para-voce-section" style="display:none;">
+    <h2 class="mb-4 text-center">Para Você</h2>
+    <div class="d-flex align-items-center position-relative">
+      <button id="btn-para-voce-esquerda" class="btn btn-light shadow-sm me-2" style="z-index:2; position:relative;">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="para-voce-scroll d-flex flex-nowrap overflow-auto py-2" id="para-voce-produtos" style="gap: 1rem; scroll-behavior: smooth;">
+      </div>
+      <button id="btn-para-voce-direita" class="btn btn-light shadow-sm ms-2" style="z-index:2; position:relative;">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+
+  <section class="container my-5">
+    <h2 class="mb-4 text-center">Novidades</h2>
+    <div class="row" id="ultimos-produtos">
+      <!-- DADOS AQUI -->
+    </div>
+  </section>
+
+  <section id="lojas" class="container my-5">
+    <h2 class="mb-4 text-center">Principais Lojas</h2>
+    <div class="row" id="top-lojas">
+      <!-- DADOS AQUI -->
+    </div>
+  </section>
+
+  <section id="produtos" class="container my-5">
+    <h2 class="mb-4 text-center">Produtos em Destaque</h2>
+    <div class="row">
+      <div class="row" id="top-produtos">
+        <!-- DADOS AQUI -->
+      </div>
+    </div>
+  </section>
+
+  <div id="carrinho-container"></div>
+
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 StartVenda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/autenticar.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/carrinho.js"></script>
+  <script>
+    const scrollContainer = document.getElementById('categoria-scroll');
+    document.getElementById('btn-categoria-esquerda').onclick = () => {
+      scrollContainer.scrollBy({ left: -220, behavior: 'smooth' });
+    };
+    document.getElementById('btn-categoria-direita').onclick = () => {
+      scrollContainer.scrollBy({ left: 220, behavior: 'smooth' });
+    };
+  </script>
+</body>
+
+</html>

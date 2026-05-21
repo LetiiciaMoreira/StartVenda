@@ -1,0 +1,108 @@
+body {
+    background: #f6f8fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #23272f;
+}
+
+.profile-card {
+    border: none;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #f3f3f3;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+
+.saldo-card {
+    border: none;
+    background: #fff;
+    color: #23272f;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px 0 rgba(44, 62, 80, 0.10);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 32px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.saldo-card .display-4 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: #4ed991;
+    font-weight: 700;
+}
+.saldo-card .fw-bold {
+    font-size: 1.7rem;
+}
+
+.filtros-card {
+    border: none;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+}
+
+.card-title {
+    font-size: 1.08rem;
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+}
+
+.btn-primary {
+    background: #7F4E9D;
+    border: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+.btn-primary:hover {
+    background: #4ed991;
+    color: #23272f;
+}
+
+.stats-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+    padding: 24px 0;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.stats-card .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7F4E9D;
+}
+.stats-card .stat-label {
+    font-size: 1rem;
+    color: #888;
+}
+
+#resumoGanhos .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.08);
+}
+
+@media (max-width: 767px) {
+    .profile-card, .saldo-card, .filtros-card, .stats-card {
+        border-radius: 12px;
+    }
+    .saldo-card {
+        min-height: 100px;
+    }
+}

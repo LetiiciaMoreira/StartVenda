@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Produto</title>
+  <link rel="stylesheet" href="../../assets/css/home.css" />
+  <link rel="stylesheet" href="../../assets/css/createProduct.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../../assets/images/logobranca.png" alt="StartVenda" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html"><i class="bi bi-house-door"></i> Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html#lojas"><i class="bi bi-shop"></i> Lojas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html#produtos"><i class="bi bi-box-seam"></i> Produtos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="banner">
+    <div class="container">
+      <h1 class="display-5">Meus Produtos</h1>
+      <p class="lead">Gerencie seus produtos de forma fácil e rápida!</p>
+    </div>
+  </section>
+  <div class="container my-5">
+    <div class="bg-white p-4 rounded shadow">
+      <h4 class="mb-4">Cadastrar Novo Produto</h4>
+      <form id="productForm">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="price" class="form-label">Preço</label>
+            <input type="number" id="price" class="form-control" lang="pt-BR" step="0.01" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="stock" class="form-label">Estoque</label>
+            <input type="number" id="stock" class="form-control" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6">
+            <label for="category_id" class="form-label">Categoria</label>
+            <select id="category_id" class="form-select" required>
+              <option value="">Selecione uma categoria</option>
+              <option value="1">Eletrônicos</option>
+              <option value="2">Moda</option>
+              <option value="3">Casa</option>
+              <option value="4">Esportes</option>
+              <option value="5">Beleza</option>
+              <option value="6">Livros</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descrição do Produto</label>
+          <div class="input-group">
+            <textarea id="description" class="form-control" rows="2"></textarea>
+            <button type="button" class="btn btn-outline-info" id="btnGerarDescricao" title="Gerar descrição com IA">
+              <i class="bi bi-magic"></i> Gerar com IA
+            </button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="url_image" class="form-label">Imagem do Produto</label>
+          <input class="form-control" type="file" id="url_image" accept="image/*">
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-secondary ms-2" id="btnLimpar">Limpar</button>
+        </div>
+      </form>
+    </div>
+    <div class="d-flex justify-content-end align-items-center gap-2 my-4">
+      <span class="me-2">Visualizar como:</span>
+      <button id="btnGrid" class="btn btn-outline-primary btn-sm active" title="Visualização em Cards">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+      </button>
+      <button id="btnTable" class="btn btn-outline-primary btn-sm" title="Visualização em Tabela">
+        <i class="bi bi-table"></i>
+      </button>
+    </div>
+    <div class="my-5">
+      <h4 class="mb-4">Meus Produtos</h4>
+      <div id="productView">
+        <div class="row" id="productTable"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 StartVenda. Todos os direitos reservados.</p>
+      <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+    </div>
+  </footer>
+  <div id="carrinho-container"></div>
+  <link rel="stylesheet" href="/assets/css/carrinho.css">
+  <script src="/assets/js/carrinho.js"></script>
+  <script src="../../assets/js/autenticar.js"></script>
+  <script src="../../assets/js/products.js"></script>
+  <script src="../../assets/js/navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btnGrid = document.getElementById('btnGrid');
+    const btnTable = document.getElementById('btnTable');
+    window.viewMode = 'grid';
+    btnGrid.onclick = () => {
+      window.viewMode = 'grid';
+      btnGrid.classList.add('active');
+      btnTable.classList.remove('active');
+      loadProducts();
+    };
+    btnTable.onclick = () => {
+      window.viewMode = 'table';
+      btnTable.classList.add('active');
+      btnGrid.classList.remove('active');
+      loadProducts();
+    };
+  </script>
+</body>
+
+</html>

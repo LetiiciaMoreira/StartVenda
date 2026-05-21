@@ -1,0 +1,101 @@
+:root {
+    --main-color: #7F4E9D;
+    --main-color-dark: #6f4289;
+    --text-light: #ffffff;
+    --text-dark: #343a40;
+    --gradient: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+}
+
+body {
+    background-color: #FEF7FF;
+}
+
+.logo {
+    width: 50px;
+}
+
+.navbar {
+    background: var(--gradient);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-light) !important;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.faixaCabecalho {
+    background: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+    height: 200px;
+    width: 100%;
+}
+
+.faixaCabecalho .logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin-top: 50px;
+    margin-left: 20vh;
+    background-color: #C0A0D8;
+}
+
+.banner {
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+    .faixaCabecalho {
+        height: 120px;
+        min-height: 80px;
+        padding: 0 8px;
+    }
+    .faixaCabecalho .logo {
+        width: 70px;
+        height: 70px;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .faixaCabecalho h3 {
+        font-size: 1.1rem;
+        margin-left: 12px !important;
+        margin-bottom: 0;
+    }
+    .banner {
+        height: 120px !important;
+        min-height: 80px;
+        object-fit: cover;
+    }
+    .container {
+        padding: 0 4px !important;
+    }
+    .bg-white.p-4.rounded.shadow {
+        padding: 10px !important;
+    }
+    h4#tituloFormulario {
+        font-size: 1.1rem;
+    }
+    form label, form h5 {
+        font-size: 1rem;
+    }
+    .form-control, .form-select {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+    }
+    .text-end {
+        text-align: center !important;
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .row > .col-md-4, .row > .col-md-3, .row > .col-md-2, .row > .col-md-6, .row > .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,11 @@
+.faixaCabecalho {
+  background-color: #7f4e9d;
+  height: 100px;
+  width: 100%;
+}
+
+.faixaCabecalho .logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 150px;
+}

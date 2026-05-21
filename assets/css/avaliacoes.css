@@ -1,0 +1,298 @@
+/* Design inspirado em home.css */
+:root {
+    --main-color: #7F4E9D;
+    --main-color-dark: #6f4289;
+    --text-light: #ffffff;
+    --text-dark: #343a40;
+    --gradient: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: var(--text-dark);
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: var(--gradient);
+    color: var(--text-light);
+    padding: 60px 0 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(127, 78, 157, 0.08);
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(127, 78, 157, 0.08);
+    padding: 32px;
+    margin-bottom: 32px;
+    animation: fadeIn 1s;
+}
+
+.product img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 16px;
+    object-fit: cover;
+    background: #f8f8f8;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 220px;
+}
+
+.product-info h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin-bottom: 18px;
+    color: #555;
+}
+
+.btn-comprar {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn-comprar:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.comment-section,
+.comments-list {
+    background: #fff;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(127, 78, 157, 0.08);
+    margin-bottom: 32px;
+    animation: fadeIn 1s;
+}
+
+.comment-section h3,
+.comments-list h3 {
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.comment-section form {
+    display: grid;
+    gap: 18px;
+}
+
+.comment-section label {
+    font-weight: 500;
+    color: var(--main-color-dark);
+}
+
+.comment-section input,
+.comment-section textarea,
+.comment-section select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e0d7ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #faf8fc;
+    transition: border 0.2s;
+}
+
+.comment-section input:focus,
+.comment-section textarea:focus,
+.comment-section select:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+.comment-section textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.comment-section button {
+    background: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(127, 78, 157, 0.08);
+}
+
+.comment-section button:hover {
+    background: linear-gradient(135deg, #FF6B6B, #7F4E9D);
+}
+
+#responseMessage {
+    margin-top: 10px;
+    color: #FF6B6B;
+    font-weight: 500;
+}
+
+.comments-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comments-list li {
+    background: #faf8fc;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px 0 rgba(127, 78, 157, 0.06);
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+
+.comments-list li:hover {
+    box-shadow: 0 4px 16px 0 rgba(127, 78, 157, 0.13);
+}
+
+.comments-list strong {
+    color: var(--main-color-dark);
+}
+
+.comments-list button {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-weight: 600;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.comments-list button:hover {
+    color: #FF6B6B;
+    text-decoration: underline;
+}
+
+.navbar {
+    background: var(--gradient);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-light) !important;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 98vw;
+        padding: 0 6px;
+    }
+
+    .product {
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .product img {
+        max-width: 100%;
+    }
+
+    .comment-section,
+    .comments-list {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    header, header h1 {
+        position: static !important;
+    }
+    header h1 {
+        font-size: 1.5rem;
+        word-break: break-word;
+        padding: 0 8px;
+    }
+    header p {
+        font-size: 1rem;
+        padding: 0 8px;
+    }
+}
+
+.logo {
+    width: 50px;
+}
+
+footer {
+    background: var(--gradient);
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px 0 10px 0;
+    margin-top: 50px;
+    font-size: 1rem;
+    border-radius: 0 0 18px 18px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

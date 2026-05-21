@@ -1,0 +1,102 @@
+.pedidos-container {
+    max-width: 950px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px 0 rgba(127, 78, 157, 0.08);
+    padding: 32px;
+}
+
+.pedidos-title {
+    color: #7F4E9D;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.table thead th {
+    background: #f0f0f0;
+    border: none;
+    color: #7F4E9D;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.table tbody tr {
+    transition: background 0.2s;
+}
+
+.table tbody tr:hover {
+    background: rgba(127, 78, 157, 0.07);
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.97em;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    display: inline-block;
+}
+
+.empty {
+    color: #888;
+    text-align: center;
+    padding: 32px 0;
+    font-size: 1.1rem;
+}
+
+.status.pendente {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.status.concluido {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.em_andamento {
+    background: #bee3f8;
+    color: #2b6cb0;
+}
+
+.chat-btn {
+    background: #e3e8ff;
+    color: #2b3a67;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.chat-btn:hover {
+    background: #c7d2fe;
+}
+
+.footer-fixo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+    color: #fff;
+    border-top: none;
+    z-index: 100;
+    padding: 18px 0 12px 0;
+    font-size: 1rem;
+    box-shadow: 0 -2px 8px 0 rgba(127, 78, 157, 0.08);
+}
+
+.footer-fixo a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-fixo a:hover {
+    text-decoration: underline;
+}

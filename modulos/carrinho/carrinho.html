@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="./assets/css/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Minha Loja</h1>
+            <button id="btn-carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="contador-carrinho">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="vitrine">
+            <!-- Produtos serão carregados aqui -->
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+
+        <!-- Carrinho de Compras -->
+        <div id="carrinho-container">
+            <div id="carrinho">
+                <div class="carrinho-header">
+                    <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+                    <button id="fechar-carrinho"><i class="fas fa-times"></i></button>
+                </div>
+                
+                <div id="carrinho-itens">
+                    <!-- Itens do carrinho serão carregados aqui -->
+                </div>
+                
+                <div class="carrinho-footer">
+                    <div class="resumo">
+                        <div class="resumo-item total">
+                            <span>Total:</span>
+                            <span id="carrinho-total">R$ 0,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="carrinho-acoes">
+                        <button id="btn-limpar" class="btn-secundario">
+                            <i class="fas fa-trash"></i> Limpar
+                        </button>
+                        <button id="btn-finalizar" class="btn-primario">
+                            <i class="fas fa-check"></i> Finalizar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/scripts/app.js"></script>
+</body>
+</html>

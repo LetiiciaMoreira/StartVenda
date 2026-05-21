@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Produto</title>
+    <link rel="stylesheet" href="../../assets/css/avaliacoes.css">
+    <link rel="stylesheet" href="../../assets/css/carrinho.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../../assets/images/logobranca.png" alt="StartVenda"
+                    class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../index.html">
+                            <i class="bi bi-house-door"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#lojas">
+                            <i class="bi bi-shop"></i> Lojas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#produtos">
+                            <i class="bi bi-box-seam"></i> Produtos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1 id="productTitle">Produto</h1>
+        <p id="productShortDesc"></p>
+    </header>
+
+    <div class="container">
+        <section class="product">
+            <img id="productImage" src="#" alt="Imagem do Produto">
+            <div class="product-info">
+                <h2 id="productName">Nome do Produto</h2>
+                <p id="productDesc">Descrição do produto.</p>
+                <p id="productPrice" style="font-size:1.3rem; color:#FF6B6B; font-weight:600;"></p>
+                <button id="btn-adicionar-carrinho" class="btn-comprar" type="button">
+                    <i class="bi bi-cart-plus"></i> Adicionar ao Carrinho
+                </button>
+            </div>
+        </section>
+
+        <section class="store-card" id="storeSection" style="margin-bottom:32px;">
+            <div class="card" style="display:flex;align-items:center;gap:24px;padding:24px;background:#fff;">
+                <img id="storeLogo" src="#" alt="Logo da Loja"
+                    style="width:100px;height:100px;border-radius:50%;background:#f8f8f8;">
+                <div>
+                    <h3 id="storeName" style="margin-bottom:8px;color:var(--main-color);font-size:1.2rem;"></h3>
+                    <p id="storeDesc" style="margin:0;color:#555;"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comment-section" class="comment-section">
+            <h3>Deixe seu comentário</h3>
+            <form id="commentForm">
+                <input type="hidden" id="commentId" value="">
+                <div>
+                    <label for="comment">Comentário:</label>
+                    <textarea id="comment" name="comment" placeholder="Escreva seu comentário" required></textarea>
+                </div>
+                <div>
+                    <label for="rating">Avaliação:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="" disabled selected>Escolha as estrelas ⭐</option>
+                        <option value="1">1 estrela ⭐</option>
+                        <option value="2">2 estrelas ⭐⭐</option>
+                        <option value="3">3 estrelas ⭐⭐⭐</option>
+                        <option value="4">4 estrelas ⭐⭐⭐⭐</option>
+                        <option value="5">5 estrelas ⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn">Enviar Comentário</button>
+            </form>
+            <p id="responseMessage" class="response"></p>
+        </section>
+
+        <section id="comments-list" class="comments-list">
+            <h3>Avaliações dos usuários</h3>
+            <ul id="commentsContainer"></ul>
+        </section>
+
+        <section id="questions-section" class="comment-section">
+            <h3>Pergunte ao vendedor</h3>
+            <form id="questionForm">
+                <input type="hidden" id="questionId" value="">
+                <div>
+                    <label for="question">Sua pergunta:</label>
+                    <textarea id="question" name="question" placeholder="Digite sua dúvida para o vendedor" required></textarea>
+                </div>
+                <button type="submit" id="submitQuestionBtn">Enviar Pergunta</button>
+            </form>
+            <p id="questionResponseMessage" class="response"></p>
+        </section>
+
+        <section id="questions-list" class="comments-list">
+            <h3>Perguntas dos usuários</h3>
+            <ul id="questionsListContainer"></ul>
+        </section>
+    </div>
+    
+    <div id="carrinho-container"></div>
+
+    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredLabel"
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginRequiredLabel">Login Necessário</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="modalLoginForm" autocomplete="off">
+                        <div class="mb-3">
+                            <label for="modalLoginUser" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="modalLoginUser" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalLoginPass" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="modalLoginPass" required>
+                        </div>
+                        <div id="modalLoginError" class="text-danger small mb-2" style="display:none;"></div>
+                        <button type="submit" class="btn btn-outline-secondary w-100">Entrar</button>
+                        <br><br>
+                        <button type="button" class="btn btn-outline-primary w-100" id="btnCriarContaModal">Criar
+                            Conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCarrinhoAdicionado" tabindex="-1" aria-labelledby="modalCarrinhoAdicionadoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCarrinhoAdicionadoLabel">Produto adicionado!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <i class="bi bi-cart-check" style="font-size:2.5rem;color:#2ecc71;"></i>
+        <p class="mt-3">O produto foi adicionado ao carrinho.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Continuar comprando</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../../assets/js/avaliacoes.js"></script>
+    <script src="../../assets/js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/carrinho.js"></script>
+</body>
+
+</html>

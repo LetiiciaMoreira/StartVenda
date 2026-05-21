@@ -1,0 +1,74 @@
+:root {
+    --main-color: #7F4E9D;
+    --main-color-dark: #6f4289;
+    --gradient: linear-gradient(135deg, #7F4E9D, #FF6B6B);
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.login-bg {
+    min-height: 100vh;
+    background: var(--gradient);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    width: 160px;
+    border-radius: 16px;
+}
+
+.login-card {
+    max-width: 370px;
+    width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px 0 rgba(127, 78, 157, 0.13);
+    padding: 2.5rem 2rem;
+    margin-top: 40px;
+}
+
+.btn-login {
+    background: var(--gradient);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #FF6B6B, #7F4E9D);
+    color: #fff;
+}
+
+.form-control:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.2rem rgba(127, 78, 157, 0.15);
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        padding: 1.5rem 0.5rem;
+        max-width: 100%;
+    }
+}
