@@ -33,22 +33,11 @@ Participei do desenvolvimento do projeto em equipe, contribuindo para a constru�
 
 ## 📸 Imagens do projeto
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="./ativos/imagens/pagina-inicial.png" width="300"><br>
-      <strong>Página Inicial</strong>
-    </td>
-    <td align="center">
-      <img src="./ativos/imagens/minhas-compras.png" width="300"><br>
-      <strong>Minhas Compras</strong>
-    </td>
-    <td align="center">
-      <img src="./ativos/imagens/finalizar-compra.png" width="300"><br>
-      <strong>Finalizar Compra</strong>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/pagina-inicial.png" width="32%" alt="Página Inicial">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/minhas-compras.png" width="32%" alt="Minhas Compras">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/finalizar-compra.png" width="32%" alt="Finalizar Compra">
+</p>
 
 ## 🎯 Objetivo
 
