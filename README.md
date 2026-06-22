@@ -74,7 +74,3 @@ json-server --watch db.json
 ## 🤝 Metodologia
 
 Durante o desenvolvimento do projeto, foram aplicados conceitos de metodologias ágeis, promovendo a colaboração em equipe, organização das tarefas e evolução contínua da aplicação.
-
----
-
-Desenvolvido por **Letícia Sousa Moreira** ❤️
