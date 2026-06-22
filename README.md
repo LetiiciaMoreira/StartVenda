@@ -34,9 +34,9 @@ Participei do desenvolvimento do projeto em equipe, contribuindo para a constru�
 ## 📸 Imagens do projeto
 
 <p align="center">
-  <img src="ativos/imagens/pagina-inicial.png" width="32%" alt="Página Inicial">
-  <img src="ativos/imagens/minhas-compras.png" width="32%" alt="Minhas Compras">
-  <img src="ativos/imagens/finalizar-compra.png" width="32%" alt="Finalizar Compra">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/pagina-inicial.png" width="32%">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/minhas-compras.png" width="32%">
+  <img src="https://raw.githubusercontent.com/LeticiaMoreira/StartVenda/main/ativos/imagens/finalizar-compra.png" width="32%">
 </p>
 
 ## 🎯 Objetivo
